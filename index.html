@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            console.log("Hello, World!");
+            // Redirect if URL contains ?code=...&shop_id=...
+            (function () {
+                var params = new URLSearchParams(window.location.search);
+                var code = params.get("code");
+                var shopId = params.get("shop_id");
+                if (code && shopId) {
+                    var newUrl = `http://localhost:3000?code=${encodeURIComponent(code)}&shop_id=${encodeURIComponent(
+                        shopId
+                    )}`;
+                    window.location.href = newUrl;
+                }
+            })();
+        </script>
+    </head>
+    <body></body>
+</html>
