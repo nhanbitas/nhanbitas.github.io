@@ -10,9 +10,9 @@
                 var code = params.get("code");
                 var shopId = params.get("shop_id");
                 if (code && shopId) {
-                    var newUrl = `http://localhost:3000?code=${encodeURIComponent(code)}&shop_id=${encodeURIComponent(
-                        shopId
-                    )}`;
+                    var newUrl = `http://localhost:3000/public/auth-shopee?code=${encodeURIComponent(
+                        code
+                    )}&shop_id=${encodeURIComponent(shopId)}`;
                     window.location.href = newUrl;
                 }
             })();
