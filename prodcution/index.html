@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            (function () {
+                var params = new URLSearchParams(window.location.search);
+                var code = params.get("code");
+                var shopId = params.get("shop_id");
+                var state = params.get("state");
+
+                if (code && shopId && !state) {
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/shopee?code=${encodeURIComponent(
+                        code
+                    )}&shop_id=${encodeURIComponent(shopId)}`;
+                    window.location.href = newUrl;
+                }
+
+                if (code && !shopId && !state) {
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/lazada?code=${encodeURIComponent(code)}`;
+                    window.location.href = newUrl;
+                }
+
+                if (code && !shopId && state) {
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/tiktok?code=${encodeURIComponent(
+                        code
+                    )}&state=${encodeURIComponent(state)}`;
+                    window.location.href = newUrl;
+                }
+            })();
+        </script>
+    </head>
+    <body></body>
+</html>
