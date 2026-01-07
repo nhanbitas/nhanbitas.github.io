@@ -12,19 +12,19 @@
                 var state = params.get("state");
 
                 if (code && shopId && !state) {
-                    var newUrl = `http://localhost:3000/auth-platform/shopee?code=${encodeURIComponent(
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/shopee?code=${encodeURIComponent(
                         code
                     )}&shop_id=${encodeURIComponent(shopId)}`;
                     window.location.href = newUrl;
                 }
 
                 if (code && !shopId && !state) {
-                    var newUrl = `http://localhost:3000/auth-platform/lazada?code=${encodeURIComponent(code)}`;
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/lazada?code=${encodeURIComponent(code)}`;
                     window.location.href = newUrl;
                 }
 
                 if (code && !shopId && state) {
-                    var newUrl = `http://localhost:3000/auth-platform/tiktok?code=${encodeURIComponent(
+                    var newUrl = `http://tmdt.bitas.com.vn/auth-platform/tiktok?code=${encodeURIComponent(
                         code
                     )}&state=${encodeURIComponent(state)}`;
                     window.location.href = newUrl;
